@@ -24,6 +24,13 @@ class HeaderTradeSettlement
     public string $currency;
 
     /**
+     * @Type("Easybill\ZUGFeRD211\Model\Period")
+     * @XmlElement(cdata = false, namespace = "urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
+     * @SerializedName("BillingSpecifiedPeriod")
+     */
+    public ?Period $billingSpecifiedPeriod = null;
+
+    /**
      * @var TradeParty
      * @Type("Easybill\ZUGFeRD211\Model\TradeParty")
      * @XmlElement(cdata = false, namespace = "urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
