@@ -17,6 +17,13 @@ class HeaderTradeSettlement
     public ?string $paymentReference = null;
 
     /**
+     * @Type("Easybill\ZUGFeRD211\Model\Id")
+     * @XmlElement(cdata=false, namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
+     * @SerializedName("CreditorReferenceID")
+     */
+    public ?Id $creditorReferenceId = null;
+
+    /**
      * @Type("string")
      * @XmlElement(cdata = false, namespace = "urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
      * @SerializedName("InvoiceCurrencyCode")
