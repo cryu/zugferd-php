@@ -19,4 +19,11 @@ class TradePaymentTerms
      * @JMS\SerializedName("DueDateDateTime")
      */
     public ?DateTime $dueDate = null;
+
+    /**
+     * @JMS\Type("Easybill\ZUGFeRD211\Model\Id")
+     * @JMS\XmlElement(cdata=false, namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
+     * @JMS\SerializedName("DirectDebitMandateID")
+     */
+    public ?Id $directDebitMandateId = null;
 }
