@@ -10,13 +10,6 @@ use JMS\Serializer\Annotation\XmlList;
 class HeaderTradeSettlement
 {
     /**
-     * @Type("string")
-     * @XmlElement(cdata = false, namespace = "urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
-     * @SerializedName("PaymentReference")
-     */
-    public ?string $paymentReference = null;
-
-    /**
      * @Type("Easybill\ZUGFeRD211\Model\Id")
      * @XmlElement(cdata=false, namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
      * @SerializedName("CreditorReferenceID")
@@ -26,16 +19,16 @@ class HeaderTradeSettlement
     /**
      * @Type("string")
      * @XmlElement(cdata = false, namespace = "urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
+     * @SerializedName("PaymentReference")
+     */
+    public ?string $paymentReference = null;
+
+    /**
+     * @Type("string")
+     * @XmlElement(cdata = false, namespace = "urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
      * @SerializedName("InvoiceCurrencyCode")
      */
     public string $currency;
-
-    /**
-     * @Type("Easybill\ZUGFeRD211\Model\Period")
-     * @XmlElement(cdata = false, namespace = "urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
-     * @SerializedName("BillingSpecifiedPeriod")
-     */
-    public ?Period $billingSpecifiedPeriod = null;
 
     /**
      * @var TradeParty
@@ -58,6 +51,13 @@ class HeaderTradeSettlement
      * @XmlList(inline = true, entry = "ApplicableTradeTax", namespace = "urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
      */
     public array $tradeTaxes = [];
+
+    /**
+     * @Type("Easybill\ZUGFeRD211\Model\Period")
+     * @XmlElement(cdata = false, namespace = "urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
+     * @SerializedName("BillingSpecifiedPeriod")
+     */
+    public ?Period $billingSpecifiedPeriod = null;
 
     /**
      * @var TradeAllowanceCharge[]
