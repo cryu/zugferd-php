@@ -5,6 +5,7 @@ namespace Easybill\ZUGFeRD211\Model;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
+use JMS\Serializer\Annotation\XmlList;
 
 class TradeProduct
 {
@@ -35,6 +36,13 @@ class TradeProduct
      * @SerializedName("Description")
      */
     public ?string $description = null;
+
+    /**
+     * @var ProductCharacteristic[]
+     * @Type("array<Easybill\ZUGFeRD211\Model\ProductCharacteristic>")
+     * @XmlList(inline = true, entry = "ApplicableProductCharacteristic", namespace = "urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
+     */
+    public ?array $productCharacteristic = [];
 
     /**
      * @Type("Easybill\ZUGFeRD211\Model\TradeCountry")
